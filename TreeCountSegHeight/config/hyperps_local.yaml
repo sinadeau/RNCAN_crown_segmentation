@@ -1,0 +1,78 @@
+# general:
+#     input_image_dir: '/home/sizhuo/Downloads/test1km_2/'
+#     input_image_type: '.tif'  # '.tif'#'.jp2'
+#     input_image_pref: ''  # prefix of image file names, can be used to filter out images
+#     channels: # dic storing channel bands and its corresponding index
+#         red: 0
+#         green: 1
+#         blue: 2
+#         infrared: 3 # in case of missing bands, set to None
+#     output_dir: '/home/sizhuo/Downloads/test1km_2/predd/'
+#     output_suffix_seg: '_seg' # for segmentation
+#     output_suffix_density: '_density' # for density
+#     output_image_type: '.tif'
+#     output_prefix: 'pred_'
+#     overwrite_analysed_files: False
+#     output_dtype_seg: 'uint8'
+#     output_dtype_density: 'float32'
+
+
+
+
+# -------------- !!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!  --------------
+
+# AJOUTER où il y a 'HERE': 
+# C:/Users/...../TreeCountSegHeight  à  ./files_added_in_the_repo/inference/ 
+
+# résultat exemple : 
+# C:/Users/...../TreeCountSegHeight/files_added_in_the_repo/inference/ 
+
+# ----------------------------------------------------------------------
+general:
+    # HERE:
+    # input_image_dir: './files_added_in_the_repo/inference/inputs/'
+    input_image_dir: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/inference/inputs/'
+    input_image_type: '.tif'  # '.tif'#'.jp2'
+    input_image_pref: ''  # prefix of image file names, can be used to filter out images
+    channels: # dic storing channel bands and its corresponding index
+        red: 0
+        green: 1
+        blue: 2
+        infrared: 3 # in case of missing bands, set to None
+    # HERE:
+    # output_dir: './files_added_in_the_repo/inference/predictions/'
+    output_dir: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/inference/predictions/'
+    output_suffix_seg: '_seg' # for segmentation
+    output_suffix_density: '_density' # for density
+    output_image_type: '.tif'
+    output_prefix: 'pred_'
+    overwrite_analysed_files: False
+    output_dtype_seg: 'uint8'
+    output_dtype_density: 'float32'
+
+
+predict:
+    # model_save_path: '/home/allo/saved_models/saved_models/'
+    # HERE:
+    # model_save_path: './files_added_in_the_repo/pretrained_model/'
+    model_save_path: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/pretrained_model/'
+    models_in_use: # list of models to use
+        - 'rgb' # rgb model
+        # - 'rgbNir' # rgb+nir model, comment out if not using
+        # - 'rgbNirNdvi' # rgb+nir+ndvi model, comment out if not using
+    fillmiss: 0 # only fill in missing preds
+    segcountpred: 1 # whether predict for segcount
+    normalize: 1 # patch norm
+    multires: 0
+    saveresult: 1
+    input_size: 256 # model input size
+    inputBN: False
+    threshold: 0.1
+    BATCH_SIZE: 1 # Depends upon GPU memory and WIDTH and HEIGHT
+    WIDTH: 256 # crop size
+    HEIGHT: 256
+    STRIDE: 224 #224 or 196   # STRIDE: WIDTH means no overlap, STRIDE: WIDTH/2 means 50 % overlap in prediction
+    workers: 30
+
+
+
