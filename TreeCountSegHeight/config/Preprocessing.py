@@ -68,6 +68,7 @@ class Configuration:
         self.prediction_pre = 'pred' # prediction suffix
         # Channel names in order for the raw tif image
         self.raw_channel_prefixs = ['red', 'green', 'blue', 'infrared']
+        # self.raw_channel_prefixs = ['red', 'green', 'blue']
         # channel names in order for the auxiliary tif image
         self.aux_channel_prefixs = []
         # All channel in one single raster file or not
@@ -81,6 +82,7 @@ class Configuration:
         self.show_boundaries_during_processing = False
         self.extracted_file_type = '.png'
         self.extracted_filenames = ['red', 'green', 'blue', 'infrared']
+        # self.extracted_filenames = ['red', 'green', 'blue']
         self.extracted_annotation_filename = 'annotation'
         self.extracted_boundary_filename = 'boundary'
         self.kernel_size_svls = 15 

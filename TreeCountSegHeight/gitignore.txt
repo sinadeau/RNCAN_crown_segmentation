@@ -1,0 +1,4 @@
+# Exclure les fichiers de cache Python
+__pycache__/
+config/__pycache__/
+core2/__pycache__/

@@ -38,7 +38,7 @@ general:
         red: 0
         green: 1
         blue: 2
-        infrared: 3 # in case of missing bands, set to None
+        infrared: None # in case of missing bands, set to None
     # HERE:
     # output_dir: './files_added_in_the_repo/inference/predictions/'
     output_dir: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/inference/predictions/'
@@ -55,7 +55,8 @@ predict:
     # model_save_path: '/home/allo/saved_models/saved_models/'
     # HERE:
     # model_save_path: './files_added_in_the_repo/pretrained_model/'
-    model_save_path: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/pretrained_model/'
+    # model_save_path: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/pretrained_model/'
+    model_save_path: 'C:/Users/Chris/OneDrive/Bureau/Université/Université laval/GLO-7030/Projet/TreeCountSegHeight/files_added_in_the_repo/fine_tuning/fine_tune_model/'
     models_in_use: # list of models to use
         - 'rgb' # rgb model
         # - 'rgbNir' # rgb+nir model, comment out if not using
