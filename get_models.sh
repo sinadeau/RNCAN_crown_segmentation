@@ -1,0 +1,3 @@
+gdown 1ZNibrh6pa4-cjXLawua6L96fOKS3uwbn
+unzip saved_models.zip
+rm saved_models.zip

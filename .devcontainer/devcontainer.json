@@ -1,0 +1,28 @@
+{
+    "name": "GLO7030 - Projet - Equipe 06",
+    "image": "nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04",
+    "runArgs": [
+        "--name",
+        "glo7030-project-eq06",
+        "--gpus",
+        "all"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.data-wrangler",
+                "charliermarsh.ruff"
+            ]
+        },
+        "settings": {
+            "python.linting.enabled": true,
+            "python.linting.ruffEnabled": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": true
+            }
+        }
+    },
+    "postCreateCommand": "apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:deadsnakes/ppa && apt-get update && apt-get install -y git zip libgl1-mesa-glx libglib2.0-0 python3.10 python3.10-venv python3.10-distutils python3-pip && ln -sf /usr/bin/python3.10 /usr/bin/python && python3.10 -m ensurepip --upgrade && python -m pip install --upgrade pip setuptools wheel && python -m pip install -r TreeCountSegHeight/requirements.txt"
+}

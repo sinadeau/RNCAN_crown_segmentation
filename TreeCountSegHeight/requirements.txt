@@ -20,3 +20,5 @@ torch==2.6.0
 tqdm==2.2.3
 wget==3.2
 ipdb==0.13.13
+tensorflow<=2.10.0
+opencv-python-headless
