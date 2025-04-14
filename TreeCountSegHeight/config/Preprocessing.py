@@ -67,22 +67,24 @@ class Configuration:
         self.raw_aux_prefix = [] # channel name for extra bands
         self.prediction_pre = 'pred' # prediction suffix
         # Channel names in order for the raw tif image
-        self.raw_channel_prefixs = ['red', 'green', 'blue', 'infrared']
+        # self.raw_channel_prefixs = ['red', 'green', 'blue', 'infrared']
+        self.raw_channel_prefixs = ['red', 'green', 'blue']
         # self.raw_channel_prefixs = ['red', 'green', 'blue']
         # channel names in order for the auxiliary tif image
         self.aux_channel_prefixs = []
         # All channel in one single raster file or not
         self.single_raster = False
         self.normalize = False # keep raw image pixel values
-        self.bands = list(range(len(self.raw_channel_prefixs)))
+        # self.bands = list(range(len(self.raw_channel_prefixs)))
+        self.bands = [5, 3, 1]
         self.aux_bands = list(list(range(len(c))) for c in self.aux_channel_prefixs) # for multi auxs
 
         # For writing the extracted images and their corresponding annotations and boundary file
         self.path_to_write = './files_added_in_the_repo/preprocessing/extracted_data/'
         self.show_boundaries_during_processing = False
         self.extracted_file_type = '.png'
-        self.extracted_filenames = ['red', 'green', 'blue', 'infrared']
-        # self.extracted_filenames = ['red', 'green', 'blue']
+        # self.extracted_filenames = ['red', 'green', 'blue', 'infrared']
+        self.extracted_filenames = ['red', 'green', 'blue']
         self.extracted_annotation_filename = 'annotation'
         self.extracted_boundary_filename = 'boundary'
         self.kernel_size_svls = 15 

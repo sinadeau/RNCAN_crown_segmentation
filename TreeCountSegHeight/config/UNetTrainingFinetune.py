@@ -78,7 +78,8 @@ class Configuration:
         # danish data used for pretraining, downloadable with the google drive link
         self.base_dir2 = './files_added_in_the_repo/fine_tuning/extracted_data_train_patch_normalized_updated/' # 'path_to_base_data'
 
-        self.extracted_filenames = ['infrared', 'green', 'blue'] # color bands in the same order as used for pretraining (self.model_path)
+        # self.extracted_filenames = ['infrared', 'green', 'blue'] # color bands in the same order as used for pretraining (self.model_path)
+        self.extracted_filenames = ['red', 'green', 'blue'] # color bands in the same order as used for pretraining (self.model_path)
         self.annotation_fn = 'annotation'
         self.weight_fn = 'boundary'
         self.density_fn = 'ann_kernel'
@@ -108,10 +109,10 @@ class Configuration:
         self.input_density_channel = [self.image_channels+2]
         self.inputBN = False
         # CNN model related variables used in the notebook
-        self.BATCH_SIZE = 8
+        self.BATCH_SIZE = 6
         self.pretrain_NBepochs = 1400 # number of epochs for pretraining
         # self.NB_EPOCHS = 600 # number of epochs for fine-tuning
-        self.NB_EPOCHS = 2 # number of epochs for fine-tuning
+        self.NB_EPOCHS = 10 # number of epochs for fine-tuning
 
         # number of validation images to use
         self.VALID_IMG_COUNT = 100 #200
@@ -122,6 +123,6 @@ class Configuration:
         # saving 
         self.pretrained_name = 'complex5'
         # model (pre-)trained with the danish data, downloadable with the google drive link
-        self.model_path = './files_added_in_the_repo/pretrained_model/trees_20210620-0202_Adam_e4_redgreenblue_256_84_frames_weightmapTversky_MSE100_5weight_attUNet.h5'
+        self.model_path = './files_added_in_the_repo/pretrained_model/trees_20210620-0202_Adam_e4_redgreenblue_256_84_frames_weightmapTversky_MSE100_5weight.h5'
         self.new_model_path = './files_added_in_the_repo/fine_tuning/fine_tune_model/'
         self.log_dir = './files_added_in_the_repo/fine_tuning/logs/'
