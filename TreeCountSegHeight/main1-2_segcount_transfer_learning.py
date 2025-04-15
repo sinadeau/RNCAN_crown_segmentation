@@ -21,6 +21,6 @@ from config import UNetTrainingFinetune
 config = UNetTrainingFinetune.Configuration()
 finetuner = trainer(config)
 finetuner.load_local_data()
-finetuner.load_pretraining_data()
+# finetuner.load_pretraining_data()
 finetuner.wrap_data()
 finetuner.model_ready_train()

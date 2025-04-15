@@ -97,7 +97,8 @@ class Configuration:
         # Probability with which the generated patches should be normalized 0 -> don't normalize, 1 -> normalize all
         self.normalize = 1
 
-        self.upsample = 1 # whether to upsample the local input images to match with the denmark data at 20cm, set to 1 if the local data is of lower resolution, eg. 50 cm
+        # self.upsample = 1 # whether to upsample the local input images to match with the denmark data at 20cm, set to 1 if the local data is of lower resolution, eg. 50 cm
+        self.upsample = 0 # whether to upsample the local input images to match with the denmark data at 20cm, set to 1 if the local data is of lower resolution, eg. 50 cm
         self.upscale_factor = 2 # if self.upsample=1, the upscale factor. e.g., to roughly align 50cm local to 20cm pretraining data, this was set to 2 for the paper. A multiple of 2 is recommended for better numerical stability.
 
         # Shape of the input data, height*width*channel
@@ -110,9 +111,10 @@ class Configuration:
         self.inputBN = False
         # CNN model related variables used in the notebook
         self.BATCH_SIZE = 6
-        self.pretrain_NBepochs = 1400 # number of epochs for pretraining
+        # self.pretrain_NBepochs = 1400 # number of epochs for pretraining
+        self.pretrain_NBepochs = 1408 # number of epochs for pretraining
         # self.NB_EPOCHS = 600 # number of epochs for fine-tuning
-        self.NB_EPOCHS = 10 # number of epochs for fine-tuning
+        self.NB_EPOCHS = 20 # number of epochs for fine-tuning
 
         # number of validation images to use
         self.VALID_IMG_COUNT = 100 #200

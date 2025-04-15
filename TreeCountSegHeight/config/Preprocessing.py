@@ -76,7 +76,7 @@ class Configuration:
         self.single_raster = False
         self.normalize = False # keep raw image pixel values
         # self.bands = list(range(len(self.raw_channel_prefixs)))
-        self.bands = [5, 3, 1]
+        self.bands = [0, 1, 2]
         self.aux_bands = list(list(range(len(c))) for c in self.aux_channel_prefixs) # for multi auxs
 
         # For writing the extracted images and their corresponding annotations and boundary file
