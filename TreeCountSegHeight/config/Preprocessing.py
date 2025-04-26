@@ -55,13 +55,14 @@ class Configuration:
     
     def __init__(self):
     	# dir containing annotating areas and tree polygons in shp files
-        self.training_base_dir = './files_added_in_the_repo/preprocessing/raw_data/'
-        self.training_area_fn = 'example_rectangle.shp' # annotating areas where tree crowns are delineated inclusively
+        self.training_base_dir = './files_added_in_the_repo/preprocessing/cleaning_data/'
+        # self.training_area_fn = 'example_rectangle.shp' # annotating areas where tree crowns are delineated inclusively
+        self.training_area_fn = 'example_rectangle_one_polygon.shp' # annotating areas where tree crowns are delineated inclusively
         self.training_polygon_fn = 'example_annotation.shp' # tree crowns
 
 
         # For reading multichannel images
-        self.raw_image_base_dir = 'files_added_in_the_repo/preprocessing/raw_data/'  # dir containing optical images (color bands)
+        self.raw_image_base_dir = 'files_added_in_the_repo/preprocessing/cleaning_data/'  # dir containing optical images (color bands)
         self.raw_image_file_type = '.tif' # image format
         self.raw_image_prefix = '' # image prefix if any
         self.raw_aux_prefix = [] # channel name for extra bands
@@ -76,7 +77,7 @@ class Configuration:
         self.single_raster = False
         self.normalize = False # keep raw image pixel values
         # self.bands = list(range(len(self.raw_channel_prefixs)))
-        self.bands = [0, 1, 2]
+        self.bands = [5,3,1]
         self.aux_bands = list(list(range(len(c))) for c in self.aux_channel_prefixs) # for multi auxs
 
         # For writing the extracted images and their corresponding annotations and boundary file
