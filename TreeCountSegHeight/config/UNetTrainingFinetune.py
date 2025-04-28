@@ -72,7 +72,7 @@ class Configuration:
         # small local dataset for fine-tuning, here data from Finland as used in the paper, downloadable with the google drive link
         self.base_dir = './files_added_in_the_repo/fine_tuning/extracted_centroids_kernel5/' # 'path_to_local_data'
         self.image_type = '.png'
-        self.oversample_times = 4 # oversample the (small) local data to match with the (larger) pretraining dataset if needed. Eg, the pretraining denmark dataset contains around 80 image patches, while the local dataset (here finland) contains only 18 patches. To balance the amount of data seen by the model during finetuning, the local data is oversampled 4 times.
+        self.oversample_times = 1 # oversample the (small) local data to match with the (larger) pretraining dataset if needed. Eg, the pretraining denmark dataset contains around 80 image patches, while the local dataset (here finland) contains only 18 patches. To balance the amount of data seen by the model during finetuning, the local data is oversampled 4 times.
         
         ##### 
         # danish data used for pretraining, downloadable with the google drive link
@@ -110,11 +110,10 @@ class Configuration:
         self.input_density_channel = [self.image_channels+2]
         self.inputBN = False
         # CNN model related variables used in the notebook
-        self.BATCH_SIZE = 6
-        # self.pretrain_NBepochs = 1400 # number of epochs for pretraining
-        self.pretrain_NBepochs = 1408 # number of epochs for pretraining
+        self.BATCH_SIZE = 8
+        self.pretrain_NBepochs = 1400 # number of epochs for pretraining
         # self.NB_EPOCHS = 600 # number of epochs for fine-tuning
-        self.NB_EPOCHS = 20 # number of epochs for fine-tuning
+        self.NB_EPOCHS = 10 # number of epochs for fine-tuning
 
         # number of validation images to use
         self.VALID_IMG_COUNT = 100 #200

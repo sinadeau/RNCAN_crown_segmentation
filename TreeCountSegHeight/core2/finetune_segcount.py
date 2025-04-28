@@ -197,7 +197,10 @@ class trainer:
 
     def wrap_data(self):
 
-        training_frames = validation_frames = list(range(len(self.frames)))
+        # training_frames = validation_frames = list(range(len(self.frames)))
+
+        training_frames = [0, 1, 2, 3, 4, 5, 6]
+        validation_frames = [7, 8, 9, 10, 11, 12, 13]
 
         annotation_channels = self.config.input_label_channel + self.config.input_weight_channel + self.config.input_density_channel
         self.train_generator = DataGenerator(self.config.input_image_channel, self.config.patch_size, training_frames, self.frames,
