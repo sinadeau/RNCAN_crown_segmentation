@@ -1,0 +1,14 @@
+numpy
+torch
+torchvision
+matplotlib
+networkx
+pygraphviz
+tqdm
+poutyne
+geopandas
+rasterio
+gdown
+tensorflow
+hydra
+great_tables
