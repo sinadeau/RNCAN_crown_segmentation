@@ -1,9 +1,9 @@
 {
-    "name": "GLO7030 - Projet - Equipe 06",
+    "name": "RNCAN_crown_segmentation",
     "image": "nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04",
     "runArgs": [
         "--name",
-        "glo7030-project-eq06",
+        "RNCAN_crown_segmentation",
         "--gpus",
         "all"
     ],
