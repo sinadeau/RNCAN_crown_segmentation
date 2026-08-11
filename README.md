@@ -1,10 +1,10 @@
 # RNCAN Crown Segmentation
 
-Deep learning pipeline for **tree crown segmentation from multispectral imagery** (RGB or RGB + NIR bands), developed as part of the GLO-7030 *Deep Learning* course project at Laval University (2025). The [TreeCountSegHeight](https://github.com/sizhuoli/TreeCountSegHeight) model was fined-tuned using additionnal data from 15,130 trees from 7 plantation sites in British Columbia, Canada. The species included in the training data are Western red cedar (\textit{Thuja plicata}, 10,196 trees) and Douglas-fir (\textit{Pseudotsuga menziesii} Mirbel, 4,934 trees). The resolution of multispectral images vary from 2,48 and 4,7 cm/pixel. For more details and results, see GLO_7030_FINAL_REPORT.pdf.
+Deep learning pipeline for **tree crown segmentation from multispectral imagery** (RGB or RGB + NIR bands), developed as part of the GLO-7030 *Deep Learning* course project at Laval University (2025). The [TreeCountSegHeight](https://github.com/sizhuoli/TreeCountSegHeight) model was fine-tuned using additional data from 15,130 trees from 7 plantation sites in British Columbia, Canada. The species included in the training data are Western red cedar (*Thuja plicata* Donn ex D.Don, 10,196 trees) and Douglas-fir (*Pseudotsuga menziesii* Mirb., 4,934 trees). The spatial resolution of multispectral images vary from 2,48 to 4,7 cm/pixel. For more details and results, see GLO_7030_FINAL_REPORT.pdf.
 
 This repository builds upon the `TreeCountSegHeight` project and adapts it to the data, preprocessing workflow, configuration, fine-tuning, and inference requirements of this project.
 
-The repository provides additional notebooks in folder `TreeCountSegHeight/files_added_in_the_repo`, including scripts to prepare multispectral imagery for fine-tuning and inference, and analyze the resulting predictions. The configuration files and other functions of the original `TreeCountSegHeight` code was also modified in a few places to adapt to our dataset (file paths, training hyperparameters, multispectral bands used).
+The repository provides additional notebooks in the folder `TreeCountSegHeight/files_added_in_the_repo`, including scripts to prepare multispectral imagery for fine-tuning and inference, and analyze the resulting predictions. The configuration files and other functions of the original `TreeCountSegHeight` code were also modified in a few places to adapt to our dataset (file paths, training hyperparameters, multispectral bands used).
 
 > **Note:** The `TreeCountSegHeight` directory contains the upstream project and is not documented in detail here. Please refer to the [original repository](https://github.com/sizhuoli/TreeCountSegHeight) for its internal architecture and documentation.
 
@@ -51,11 +51,12 @@ RNCAN_crown_segmentation/
 │
 ├── TreeCountSegHeight/
 │   └── ... upstream TreeCountSegHeight project
-│   └── files_added_in_the_repo:                                
+│
+│   └── files_added_in_the_repo/                              
 │       ├── calculate_metrics.ipynb
 │       ├── cleaning_raw_data.ipynb    
-│       ├── preprocessing_for inference_and_viz.ipynb
-│       ├── preprocessing_for inference_and_viz_RGB_NIR.ipynb 
+│       ├── preprocessing_for_inference_and_viz.ipynb
+│       ├── preprocessing_for_inference_and_viz_RGB_NIR.ipynb 
 │       └── split_train_test.ipynb
 │       └── inference_vs_ground_truth_overlap_viz.ipynb
 │
@@ -67,11 +68,6 @@ RNCAN_crown_segmentation/
 ```
 
 ### Main Components
-Component       Description
-TreeCountSegHeight/	Upstream TreeCountSegHeight project used as the deep learning framework
-.devcontainer/	Development container configuration
-get_models.sh	Script for obtaining the required pretrained models from TreeCountSegHeight/
-requirements.txt	Python dependencies used by the additional project components
 
 | Component | Description |
 |---|---|
@@ -270,7 +266,7 @@ TreeCountSegHeight/inference/predictions/
 The following Jupyter notebooks are provided for evaluating and visualizing the results:
 
 - `TreeCountSegHeight/files_added_in_the_repo/calculate_metrics.ipynb` – calculation of evaluation metrics
-- `TreeCountSegHeight/files_added_in_the_repo/inference_vs_ground_truth_overlap_viz.ipynb` – visualization the overlap between predictions and ground truth
+- `TreeCountSegHeight/files_added_in_the_repo/inference_vs_ground_truth_overlap_viz.ipynb` – visualization of the overlap between predictions and ground truth
 
 ---
 
@@ -293,9 +289,10 @@ A development container configuration is provided in:
 ```text
 .devcontainer/devcontainer.json
 ```
----
 
 This can be used to reproduce a consistent development environment when working with compatible container-based development tools.
+
+---
 
 ## Acknowledgements
 
